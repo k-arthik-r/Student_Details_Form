@@ -3,9 +3,9 @@ import pymongo
 
 app = Flask(__name__)
 
-client = pymongo.MongoClient("mongodb+srv://karthik:admin1234@data.kv0kadm.mongodb.net/?retryWrites=true&w=majority")
-db = client["student_db"]
-collection = db["student"]
+client = pymongo.MongoClient("<Mongo_DB_Connection_String>")
+db = client["<Database_Name>"]
+collection = db["<Collection_Name>"]
 
 @app.route('/')
 def index():
