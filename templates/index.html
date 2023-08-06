@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-eqiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="icon"  type="image/x-icon"  href="{{ url_for('static', filename='icon.png') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <section>
+        <div class="login-box">
+            <form action="/save_student" method="post">
+                <h2>Student Details Form</h2>
+                <div class="input-box">
+                    <input type="text" id="name" name="name" autocomplete="off" required>
+                    <label >Name</label>
+                    <!-- # Name is required for app.py -->
+                </div>
+                <div class="input-box">
+                    <input type="text" id="usn" name="usn" autocomplete="off" required>
+                    <label>USN</label>
+                </div>
+                <div class="input-box">
+                    <input type="number" step="any" id="grade" name="grade" autocomplete="off" required>
+                    <label>Grade</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="linkedin" name="linkedin" autocomplete="off" required>
+                    <label>Linked-In Profile Name</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="github" name="github" autocomplete="off" required>
+                    <label>Github Profile Name</label>
+                </div>
+                <div class="flex_justy_between">
+                    <input type="submit" value="Save">
+                    <input type="button" value="Clear" onclick="clearForm()">
+                </div>
+                <div class="margin-top">
+                    {% if message %}
+                        {% if success %}
+                            <p style="color: green;">{{ message }}</p>
+                        {% else %}
+                            <p style="color: red;">{{ message }}</p>
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+
+</html>
