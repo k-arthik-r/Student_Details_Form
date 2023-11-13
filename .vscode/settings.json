@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/a4dece93-fe2c-49cb-be5b-cc4c6b5b470e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/student-details-form",
+    "appService.deploySubpath": "."
+}

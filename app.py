@@ -1,11 +1,14 @@
 from flask import Flask, render_template, request
+from configparser import ConfigParser
 import pymongo
 
 app = Flask(__name__)
+config = ConfigParser()
+config.read('config.ini')
 
-client = pymongo.MongoClient("<Mongo_DB_Connection_String>")
-db = client["<Database_Name>"]
-collection = db["<Collection_Name>"]
+client = pymongo.MongoClient(config['connection']['connection_string'])
+db = client[config['database']['db_name']]
+collection = db[config['database']['collection_name']]
 
 @app.route('/')
 def index():
@@ -21,13 +24,10 @@ def save_student():
 
 
     if name and usn and grade:
-        # Assuming you have a collection named 'students' in your MongoDB database
 
-        # Check if the student with the given USN already exists
         existing_student = collection.find_one({'_id': usn})
 
         if existing_student:
-            # If the student already exists, update their information
             collection.update_one(
                 {'_id': usn},
                 {
@@ -41,7 +41,6 @@ def save_student():
             )
             message = "Data updated successfully."
         else:
-            # If the student does not exist, insert a new document
             student_data = {
                 '_id': usn,
                 'name': name,
