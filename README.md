@@ -75,7 +75,7 @@ Python 3.11.1 (Recommended)
 
 Ithe Webpage will take Data Like Name, USN, Grade, Linked IN Profile, Github Profile and Stres it in Mongo DB Atlas. If the USN is Alreday Present then it will Just Updates the Data for that USN. USN is used as _id here. 
 
-![Doc2](https://github.com/k-arthik-r/Student_Details_Form/assets/111432615/5578ea60-2f50-4538-9a68-0b0431f66b17)
+![Doc2](https://github.com/k-arthik-r/Student_Details_Form/assets/111432615/11b78787-6daf-4336-ac52-f105e58380cc)
 
 ----------------------------
 
